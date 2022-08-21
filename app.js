@@ -9,7 +9,7 @@ const file = reader.readFile('ana.xlsx')
 
 
 let data = []
-var results = [];
+
 const sheets = file.SheetNames
 
 function search() {
@@ -23,11 +23,13 @@ search()
 
 
 app.get('/getData/:siteName', (req, res) => {
+    var results = [];
 
     console.log('hello');
     for (var i = 0; i < data.length; i++) {
         if (data[i]['Site Name'] == req.params.siteName) {
             results = data[i];
+            break
         }
     }
 
