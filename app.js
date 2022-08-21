@@ -6,25 +6,17 @@ const multer = require("multer");
 const reader = require('xlsx');
 const { Router } = require("express");
 const file = reader.readFile('ana.xlsx')
-
-
 let data = []
-
 const sheets = file.SheetNames
-
 function search() {
     const temp = reader.utils.sheet_to_json(file.Sheets[file.SheetNames[1]])
     temp.forEach((res) => {
         data.push(res)
     })
 }
-
 search()
-
-
 app.get('/getData/:siteName', (req, res) => {
     var results = [];
-
     console.log('hello');
     for (var i = 0; i < data.length; i++) {
         if (data[i]['Site Name'] == req.params.siteName) {
@@ -32,11 +24,6 @@ app.get('/getData/:siteName', (req, res) => {
             break
         }
     }
-
-    // res.status(200).json({
-    //     data: results
-    // })
-
     res.status(200).json({
         data: {
             siteCode: results['Site Code'] || null,
@@ -51,14 +38,6 @@ app.get('/getData/:siteName', (req, res) => {
             newSiteConfig: results['New Site Configuration'] || null,
         }
     })
-
-
 })
-
-
-
-
-
 console.log(data)
-
 module.exports = app
