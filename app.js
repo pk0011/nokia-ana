@@ -6,6 +6,23 @@ const multer = require("multer");
 const reader = require('xlsx');
 const { Router } = require("express");
 const file = reader.readFile('ana.xlsx')
+
+
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    if (req.method === "OPTIONS") {
+      res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+      return res.status(200).json({});
+    }
+    next();
+  });
+
+  
 let data = []
 const sheets = file.SheetNames
 function search() {
