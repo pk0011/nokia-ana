@@ -16,8 +16,8 @@ const siteRoutes = require('./api/routes/sitedetails')
 
 
 
-const URI = "mongodb+srv://1234:1234@cluster0.tegd4kr.mongodb.net/?retryWrites=true&w=majority"
-// const URI="mongodb://localhost:27017/sitedetails";
+// const URI = "mongodb+srv://1234:1234@cluster0.tegd4kr.mongodb.net/?retryWrites=true&w=majority"
+const URI="mongodb://localhost:27017/sitedetails";
 mongoose.connect(URI, {
 
     useNewUrlParser: true, 
@@ -43,7 +43,7 @@ app.use((req, res, next) => {
     next();
   });
 
-
+app.use(express.static('upload'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 console.log("hello");
