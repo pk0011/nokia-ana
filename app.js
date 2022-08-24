@@ -16,8 +16,8 @@ const siteRoutes = require('./api/routes/sitedetails')
 
 
 
-// const URI = "mongodb+srv://1234:1234@cluster0.tegd4kr.mongodb.net/?retryWrites=true&w=majority"
-const URI="mongodb://localhost:27017/sitedetails";
+const URI = "mongodb+srv://1234:1234@cluster0.tegd4kr.mongodb.net/?retryWrites=true&w=majority"
+// const URI="mongodb://localhost:27017/sitedetails";
 mongoose.connect(URI, {
 
     useNewUrlParser: true, 
