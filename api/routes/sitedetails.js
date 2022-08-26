@@ -91,8 +91,8 @@ router.post("/addSiteDetails", upload, (req, res, next) => {
                             bcfId: data[i].bcfId || "-",
                             oamIp: data[i].oamIp || "-",
                             subnetMask: data[i].subnetMask || "-",
-                            existingSiteConfig: data[i].existingSiteConfiguration || "-",
-                            newSiteConfig: data[i].newSiteConfiguration || "-",
+                            existingSiteConfiguration: data[i].existingSiteConfiguration || "-",
+                            newSiteConfiguration: data[i].newSiteConfiguration || "-",
                             u2978: data[i].u2978 || "-",
                             u1076: data[i].u1076 || "-",
                             u1078: data[i].u1078 || "-",
@@ -166,8 +166,8 @@ router.get('/getSite/:siteName', (req, res, next) => {
                         bscId: result[0].bscId || null,
                         bcfId: result[0].bcfId || null,
                         oamIp: result[0].oamIp || null,
-                        existingSiteConfiguration: result[0].existingSiteConfiguration || null,
-                        newSiteConfiguration: result[0].newSiteConfiguration || null,
+                        existingSiteConfig: result[0].existingSiteConfiguration || null,
+                        newSiteConfig: result[0].newSiteConfiguration || null,
                     }
                 })
             }
