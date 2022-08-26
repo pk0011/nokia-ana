@@ -172,7 +172,7 @@ router.get('/getSite/:siteName', (req, res, next) => {
                 })
             }
             else {
-                res.status(404).json({
+                res.status(200).json({
                     success: false,
                     message: "Data not found",
                     data: {
