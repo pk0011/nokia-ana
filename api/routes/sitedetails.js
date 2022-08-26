@@ -166,8 +166,8 @@ router.get('/getSite/:siteName', (req, res, next) => {
                         bscId: result[0].bscId || null,
                         bcfId: result[0].bcfId || null,
                         oamIp: result[0].oamIp || null,
-                        existingSiteConfig: result[0].existingSiteConfig || null,
-                        newSiteConfig: result[0].newSiteConfig || null,
+                        existingSiteConfiguration: result[0].existingSiteConfiguration || null,
+                        newSiteConfiguration: result[0].newSiteConfiguration || null,
                     }
                 })
             }
